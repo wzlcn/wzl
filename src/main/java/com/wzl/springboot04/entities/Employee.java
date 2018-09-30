@@ -1,5 +1,8 @@
 package com.wzl.springboot04.entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import javax.validation.constraints.Pattern;
 import java.util.Date;
 
 public class Employee {
@@ -11,6 +14,7 @@ public class Employee {
     //1 male, 0 female
     private Integer gender;
     private Department department;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date birth;
 
     public Integer getId() {
