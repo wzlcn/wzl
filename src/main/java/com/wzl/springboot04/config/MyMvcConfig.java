@@ -20,7 +20,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
        // super.addViewControllers(registry);
-        //浏览器发送 /atguigu 请求来到 success
+        //浏览器发送 /wzl 请求来到 success
         registry.addViewController("/wzl").setViewName("success");
     }
 
@@ -42,8 +42,8 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
                 //super.addInterceptors(registry);
                 //静态资源；  *.css , *.js
                 //SpringBoot已经做好了静态资源映射
-                registry.addInterceptor(new LoginHandlerIntercept())
-                        .excludePathPatterns("/index.html","/","/user/login");
+//                registry.addInterceptor(new LoginHandlerIntercept()).addPathPatterns("/**")
+//                        .excludePathPatterns("/index.html","/","/user/login");
             }
         };
 
