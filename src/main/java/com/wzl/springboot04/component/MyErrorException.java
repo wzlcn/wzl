@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.WebRequest;
 
 import java.util.Map;
+
 @Component
 public class MyErrorException extends DefaultErrorAttributes {
     //返回的值map就是页面和json能获取的所有字段
@@ -13,7 +14,7 @@ public class MyErrorException extends DefaultErrorAttributes {
         Map<String, Object> map = super.getErrorAttributes(webRequest, includeStackTrace);
         map.put("company", "zyzx");
 
-        Map<String,Object> ext = (Map<String, Object>) webRequest.getAttribute("ext", 0);
+        Map<String, Object> ext = (Map<String, Object>) webRequest.getAttribute("ext", 0);
         map.put("ext", ext);
         return map;
     }

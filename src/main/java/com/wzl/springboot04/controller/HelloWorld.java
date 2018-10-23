@@ -18,8 +18,8 @@ public class HelloWorld {
 
     @ResponseBody
     @RequestMapping("hello")
-    public String hello(@RequestParam("user")String user){
-        if (user.equals("aaa")){
+    public String hello(@RequestParam("user") String user) {
+        if (user.equals("aaa")) {
             throw new UserNotExitException();
         }
         return "Hello World!";
@@ -27,9 +27,9 @@ public class HelloWorld {
 
     //查出一些数据，在页面展示
     @RequestMapping("success")
-    public String success(Map<String,Object> map){
-        map.put("hello","<h1>你好！<h1/>" );
-        map.put("users", Arrays.asList("张三","李四"));
+    public String success(Map<String, Object> map) {
+        map.put("hello", "<h1>你好！<h1/>");
+        map.put("users", Arrays.asList("张三", "李四"));
         //classpath:/templates/success.html
         return "success";
     }

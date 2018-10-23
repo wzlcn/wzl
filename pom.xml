@@ -28,7 +28,18 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <!--<exclusions>-->
+            <!--<exclusion>-->
+            <!--<artifactId>spring-boot-starter-tomcat</artifactId>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--</exclusion>-->
+            <!--</exclusions>-->
         </dependency>
+        <!--引入jetty，替换默认的Tomcat，也支持undertow。需要注意上面的exclusions标签，先排除tomcat-->
+        <!--<dependency>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-jetty</artifactId>-->
+        <!--</dependency>-->
         <!--引入jquery的webjars-->
         <dependency>
             <groupId>org.webjars</groupId>

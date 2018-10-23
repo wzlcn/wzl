@@ -12,7 +12,7 @@ import java.util.Map;
 @ControllerAdvice
 public class MyExceptionHandler {
 
-//    @ResponseBody
+    //    @ResponseBody
 //    @ExceptionHandler(UserNotExitException.class)
 //    public Map<String,Object> handlerException(Exception e){
 //
@@ -22,9 +22,9 @@ public class MyExceptionHandler {
 //        return map;
 //    }
     @ExceptionHandler(UserNotExitException.class)
-    public String  handlerException(Exception e, HttpServletRequest request){
+    public String handlerException(Exception e, HttpServletRequest request) {
 
-        Map<String,Object> map=new HashMap<>();
+        Map<String, Object> map = new HashMap<>();
         //传入我们自己的错误代码4xx 5xx
         request.setAttribute("javax.servlet.error.statues_code", 500);
         map.put("code", "user is not exit");

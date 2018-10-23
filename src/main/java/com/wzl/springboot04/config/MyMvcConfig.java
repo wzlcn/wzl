@@ -16,10 +16,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 public class MyMvcConfig extends WebMvcConfigurerAdapter {
 
 
-
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-       // super.addViewControllers(registry);
+        // super.addViewControllers(registry);
         //浏览器发送 /wzl 请求来到 success
         registry.addViewController("/wzl").setViewName("success");
     }
@@ -27,7 +26,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
     //所有的WebMvcConfigurerAdapter组件都会一起起作用
 
     @Bean //将组件注册在容器
-    public WebMvcConfigurerAdapter webMvcConfigurerAdapter(){
+    public WebMvcConfigurerAdapter webMvcConfigurerAdapter() {
         WebMvcConfigurerAdapter adapter = new WebMvcConfigurerAdapter() {
             @Override
             public void addViewControllers(ViewControllerRegistry registry) {
@@ -52,7 +51,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
 
 
     @Bean
-    public LocaleResolver localeResolver(){
+    public LocaleResolver localeResolver() {
         return new MyLocalResolver();
     }
 
